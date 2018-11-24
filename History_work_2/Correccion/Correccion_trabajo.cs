@@ -6,9 +6,9 @@ namespace Application
 
     public class Segundo_trabajo
     {
-        public Segundo_trabajo()
+        public static void Main()
         {
-            Console.WriteLine("escriba la cantidad de (*) que desee en numeros enteros");
+           Console.WriteLine("escriba la cantidad de (*) que desee en numeros enteros");
 
             int numero = Convert.ToInt32(Console.ReadLine());
             String n = "";
@@ -16,6 +16,7 @@ namespace Application
             {
                 n += " ";
                 Console.WriteLine(n + "*");
+                // Console.WriteLine("\n"); - con esto los (*) van a estar separados
             }
     }
 }
