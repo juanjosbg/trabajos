@@ -18,5 +18,6 @@ namespace Application
                 Console.WriteLine(n + "*");
                 // Console.WriteLine("\n"); - con esto los (*) van a estar separados
             }
+        }
     }
 }
