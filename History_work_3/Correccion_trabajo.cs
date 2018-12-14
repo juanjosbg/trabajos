@@ -2,40 +2,32 @@
                     
 namespace Application 
 {
-
-    //correccion del ejercicio 
-
     public class Tercer_trabajo
-    {
-        // -----------------------------Principio, (ctdad de numeros que desee optener)------------------------------------------------------//
+    {   
         public static void Main()
-        {
-            Console.WriteLine("digite los numeros que desee tener en numeros enteros y uno a uno");
-            // Declaraacion de variables 
-            Tercer_trabajo Tercer_trabajo = new Tercer_trabajo();
-            Tercer_trabajo.numeroMayor();
-
-        }
-
+            {   
+//   -----      Primera parte        ------------------------------------------
+                Console.WriteLine("digite los numeros que desee tener");
+            
+//   ------     Luego declaramos las variables      --------------------------- 
+                Tercer_trabajo tercerTrabajo = new Tercer_trabajo();
+            
+//   ------     Luego incorporamos el .split         --------------------------- 
+                string[] arregloLetras =Console.ReadLine().Split(',');
+                tercerTrabajo.numeroMayor(arregloLetras);
+            }
         
-        // ----------------------------Tercera parte, (Escoge el numero mayor)------------------------------------------------------//
-        public void numeroMayor()
+        
+//   -----      Iniciacion del codigo   ------------------------------------------
+        
+        public void numeroMayor(string[] data)
         {
-            
-            int[] arregloNumeros = new int[4];
-            string n = "";
+            int[] arregloNumeros = new int[data.Length];    
             for (int i = 0; i < arregloNumeros.Length; i++)
-            {
-                arregloNumeros[i] = Convert.ToInt32(Console.ReadLine());
-                n+=arregloNumeros[i].ToString() + ",";
-            }
+                {
+                  arregloNumeros[i] = Convert.ToInt32(data [i]);
+                }
             
-            string[] stringArray = new string[]{ n };
-            for(int i = 0; i < stringArray.Length; i++) {
-                Console.WriteLine(stringArray[i]);
-            }
-
-
             int firts = arregloNumeros[0];
             for (int i = 1; i < arregloNumeros.Length; i++)
             {
@@ -46,11 +38,10 @@ namespace Application
             }
 
             this.imprimirAsteriscos(firts);
-
         }
+//   -----  Segunda parte (impriecion de *)      ------------------------------------------ 
         
-        // ----------------------------Segunda parte (impriecion de *)------------------------------------------------------//
-        public void imprimirAsteriscos(int x)
+         public void imprimirAsteriscos(int x)
         {
             Console.WriteLine("la ctdad en * del numero mayor son..  ");
             String n = "";
@@ -58,10 +49,7 @@ namespace Application
             {
                 n += " ";
                 Console.WriteLine(n + "*");
-                // Console.WriteLine("\n"); - con esto los (*) van a estar separados
             }
-        }
-
-
+        }   
     }
 }
