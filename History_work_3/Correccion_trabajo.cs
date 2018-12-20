@@ -14,14 +14,17 @@ namespace Application
             
 //   ------     Luego incorporamos el .split         --------------------------- 
                 string[] arregloLetras =Console.ReadLine().Split(',');
-                tercerTrabajo.numeroMayor(arregloLetras);
+                int first = tercerTrabajo.numeroMayor(arregloLetras);
+
+ //   ------     Funcion de la impresion         ---------------------------        
+                tercerTrabajo.imprimirAsteriscos(first);
             }
         
         
 //   -----      Iniciacion del codigo   ------------------------------------------
         
-        public void numeroMayor(string[] data)
-        {
+        public int numeroMayor(string[] data)
+        {           
             int[] arregloNumeros = new int[data.Length];    
             for (int i = 0; i < arregloNumeros.Length; i++)
                 {
@@ -35,9 +38,9 @@ namespace Application
                 {
                     firts = arregloNumeros[i];
                 }
+                
             }
-
-            this.imprimirAsteriscos(firts);
+            return firts;
         }
 //   -----  Segunda parte (impriecion de *)      ------------------------------------------ 
         
@@ -50,6 +53,6 @@ namespace Application
                 n += " ";
                 Console.WriteLine(n + "*");
             }
-        }   
+        }
     }
 }
